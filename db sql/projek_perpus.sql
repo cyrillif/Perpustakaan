@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 19, 2020 at 08:01 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.3
+-- Host: 127.0.0.1
+-- Generation Time: Dec 19, 2022 at 03:13 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -40,7 +39,7 @@ CREATE TABLE `tbl_biaya_denda` (
 --
 
 INSERT INTO `tbl_biaya_denda` (`id_biaya_denda`, `harga_denda`, `stat`, `tgl_tetap`) VALUES
-(1, '4000', 'Aktif', '2019-11-23');
+(1, '4000', 'Aktif', '2022-10-29');
 
 -- --------------------------------------------------------
 
@@ -70,7 +69,13 @@ CREATE TABLE `tbl_buku` (
 --
 
 INSERT INTO `tbl_buku` (`id_buku`, `buku_id`, `id_kategori`, `id_rak`, `sampul`, `isbn`, `lampiran`, `title`, `penerbit`, `pengarang`, `thn_buku`, `isi`, `jml`, `tgl_masuk`) VALUES
-(8, 'BK008', 2, 1, '0', '132-123-234-231', '0', 'CARA MUDAH BELAJAR PEMROGRAMAN C++', 'INFORMATIKA BANDUNG', 'BUDI RAHARJO ', '2012', '<table class=\"table table-bordered\" style=\"background-color: rgb(255, 255, 255); width: 653px; color: rgb(51, 51, 51);\"><tbody><tr><td style=\"padding: 8px; line-height: 1.42857; border-color: rgb(244, 244, 244);\">Tipe Buku</td><td style=\"padding: 8px; line-height: 1.42857; border-color: rgb(244, 244, 244);\">Kertas</td></tr><tr><td style=\"padding: 8px; line-height: 1.42857; border-color: rgb(244, 244, 244);\">Bahasa</td><td style=\"padding: 8px; line-height: 1.42857; border-color: rgb(244, 244, 244);\">Indonesia</td></tr></tbody></table>', 23, '2019-11-23 11:49:57');
+(9, 'BK001', 17, 1, 'f19ae6920d7cb748c64845bef347b838.jpg', 'ISBN 978-602-61373-7-1', NULL, 'Panduan Lengkap Perakitan Komputer', 'Malang : Lembaga Kajian Profesi', 'Nurul Hidayati', '2018', '', 13, '2022-12-05 21:58:07'),
+(10, 'BK0010', 17, 1, '261d143df17c7454011469aee90add78.png', 'ISBN 979-533-274-0', NULL, 'Pengenalan Komputer', 'Yogyakarta : Andi Offset', 'JOGIYANTO H.M', '1995', '', 4, '2022-12-05 22:01:01'),
+(11, 'BK0011', 16, 1, 'f1afb8c902e525c8d09b154a8057e759.jpg', 'ISBN 978-602-401-542-8', NULL, '40 Project Robotic dan Aplikasi Android', 'Yogyakarta : Deepublish', 'Ricki Ananda', '2016', '', 7, '2022-12-05 22:03:38'),
+(12, 'BK0012', 16, 1, '0600ae36846fcfdbc39a18651a1ee6c5.jpg', 'ISBN 978-623-01-9994-5', NULL, 'Arduino &amp; Johnny-Five : dasar pemrograman Arduino menggunakan Javascrit Robotic Programming Framework', 'Yogyakarta : Andi', 'Abdul Kadir', '2019', '', 15, '2022-12-05 22:05:48'),
+(13, 'BK0013', 15, 2, 'be7898aa92312d59d2c092497057c81d.jpeg', 'ISBN 9798140451', NULL, 'Matematika ekonomi', 'Jakarta : Lembaga Penerbit Fakultas Ekonomi Universitas Indonesia', 'Soeheroe Tjokroprajitno', '1994', '', 21, '2022-12-05 22:12:10'),
+(14, 'BK0014', 15, 2, 'ba3d374669b35db09b82910ddbb48fc9.jpg', 'ISBN 979-676-761-9', NULL, 'Cermat Matematika', 'Jakarta : Yudhistira', 'Husein Tampomas', '2003', '', 29, '2022-12-05 22:13:43'),
+(15, 'BK0015', 19, 6, 'e1360c59d580ea966062eb2c65296c4e.png', 'ISBN 978-602-8187-68-8', NULL, 'Web Programming mudah dan cepat', 'Yogyakarta : Deepublish', 'Redi Panuju', '2018', '', 9, '2022-12-06 20:26:35');
 
 -- --------------------------------------------------------
 
@@ -91,8 +96,9 @@ CREATE TABLE `tbl_denda` (
 --
 
 INSERT INTO `tbl_denda` (`id_denda`, `pinjam_id`, `denda`, `lama_waktu`, `tgl_denda`) VALUES
-(3, 'PJ001', '0', 0, '2020-05-20'),
-(5, 'PJ009', '0', 0, '2020-05-20');
+(6, 'PJ0017', '0', 0, '2022-12-05'),
+(7, 'PJ001', '4000', 1, '2022-12-05'),
+(8, 'PJ0027', '0', 0, '2022-12-06');
 
 -- --------------------------------------------------------
 
@@ -110,7 +116,23 @@ CREATE TABLE `tbl_kategori` (
 --
 
 INSERT INTO `tbl_kategori` (`id_kategori`, `nama_kategori`) VALUES
-(2, 'Pemrograman');
+(2, 'Pemrograman'),
+(3, 'Agama'),
+(4, 'Komik'),
+(5, 'Populer'),
+(6, 'Hukum'),
+(7, 'Novel'),
+(8, 'Olahraga'),
+(9, 'Sains'),
+(10, 'Statistika'),
+(11, 'Akutansi'),
+(12, 'Automotif'),
+(13, 'Bahasa'),
+(14, 'Komunikasi'),
+(15, 'Matematika'),
+(16, 'Robotic'),
+(17, 'Komputer'),
+(19, 'Web Programming');
 
 -- --------------------------------------------------------
 
@@ -140,8 +162,9 @@ CREATE TABLE `tbl_login` (
 --
 
 INSERT INTO `tbl_login` (`id_login`, `anggota_id`, `user`, `pass`, `level`, `nama`, `tempat_lahir`, `tgl_lahir`, `jenkel`, `alamat`, `telepon`, `email`, `tgl_bergabung`, `foto`) VALUES
-(1, 'AG001', 'anang', '202cb962ac59075b964b07152d234b70', 'Petugas', 'Anang', 'Bekasi', '1999-04-05', 'Laki-Laki', 'Ujung Harapan', '089618173609', 'fauzan1892@codekop.com', '2019-11-20', 'user_1567327491.png'),
-(2, 'AG002', 'fauzan', '202cb962ac59075b964b07152d234b70', 'Anggota', 'Fauzan', 'Bekasi', '1998-11-18', 'Laki-Laki', 'Bekasi Barat', '08123123185', 'fauzanfalah21@gmail.com', '2019-11-21', 'user_1589911243.png');
+(1, 'AG001', 'cyrill', '202cb962ac59075b964b07152d234b70', 'Petugas', 'Cyrill Ilario Ifaru', 'Jakarta', '2000-07-02', 'Laki-Laki', 'Pasar Minggu', '082299485827', 'cyrill@gmail.com', '2022-10-29', 'user_1670221953.JPG'),
+(2, 'AG002', 'luthfi', '202cb962ac59075b964b07152d234b70', 'Anggota', 'Luthfi', 'Depok', '2002-11-19', 'Laki-Laki', 'Cinere', '083243543684', 'luthfi@gmail.com', '2022-11-21', 'user_1670221900.JPEG'),
+(12, 'AG0012', 'alfia', '202cb962ac59075b964b07152d234b70', 'Petugas', 'alfia', 'Depok', '1998-06-25', 'Perempuan', 'Depok', '007096088', 'alfia@gmail.com', '2022-12-06', 'user_1670333048.JPEG');
 
 -- --------------------------------------------------------
 
@@ -166,8 +189,16 @@ CREATE TABLE `tbl_pinjam` (
 --
 
 INSERT INTO `tbl_pinjam` (`id_pinjam`, `pinjam_id`, `anggota_id`, `buku_id`, `status`, `tgl_pinjam`, `lama_pinjam`, `tgl_balik`, `tgl_kembali`) VALUES
-(8, 'PJ001', 'AG002', 'BK008', 'Di Kembalikan', '2020-05-19', 1, '2020-05-20', '2020-05-20'),
-(10, 'PJ009', 'AG002', 'BK008', 'Di Kembalikan', '2020-05-20', 1, '2020-05-21', '2020-05-20');
+(11, 'PJ001', 'AG002', 'BK0014', 'Di Kembalikan', '2022-12-02', 2, '2022-12-04', '2022-12-05'),
+(14, 'PJ0014', 'AG002', 'BK0014', 'Dipinjam', '2022-12-04', 2, '2022-12-06', '0'),
+(15, 'PJ0014', 'AG002', 'BK0010', 'Dipinjam', '2022-12-04', 2, '2022-12-06', '0'),
+(16, 'PJ0014', 'AG002', 'BK001', 'Dipinjam', '2022-12-04', 2, '2022-12-06', '0'),
+(17, 'PJ0017', 'AG002', 'BK0014', 'Di Kembalikan', '2022-12-01', 4, '2022-12-05', '2022-12-05'),
+(18, 'PJ0017', 'AG002', 'BK0010', 'Di Kembalikan', '2022-12-01', 4, '2022-12-05', '2022-12-05'),
+(19, 'PJ0017', 'AG002', 'BK001', 'Di Kembalikan', '2022-12-01', 4, '2022-12-05', '2022-12-05'),
+(20, 'PJ0017', 'AG002', 'BK0012', 'Di Kembalikan', '2022-12-01', 4, '2022-12-05', '2022-12-05'),
+(26, 'PJ0021', 'AG002', 'BK0012', 'Dipinjam', '2022-12-01', 3, '2022-12-04', '0'),
+(27, 'PJ0027', 'AG002', 'BK0015', 'Di Kembalikan', '2022-12-06', 2, '2022-12-08', '2022-12-06');
 
 -- --------------------------------------------------------
 
@@ -185,7 +216,12 @@ CREATE TABLE `tbl_rak` (
 --
 
 INSERT INTO `tbl_rak` (`id_rak`, `nama_rak`) VALUES
-(1, 'Rak Buku 1');
+(1, 'Rak Buku 1'),
+(2, 'Rak Buku 2'),
+(3, 'Rak Buku 3'),
+(4, 'Rak Buku 4'),
+(5, 'Rak Buku 5'),
+(6, 'Rak Buku 6');
 
 --
 -- Indexes for dumped tables
@@ -247,37 +283,37 @@ ALTER TABLE `tbl_biaya_denda`
 -- AUTO_INCREMENT for table `tbl_buku`
 --
 ALTER TABLE `tbl_buku`
-  MODIFY `id_buku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_buku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `tbl_denda`
 --
 ALTER TABLE `tbl_denda`
-  MODIFY `id_denda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_denda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tbl_kategori`
 --
 ALTER TABLE `tbl_kategori`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `tbl_login`
 --
 ALTER TABLE `tbl_login`
-  MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `tbl_pinjam`
 --
 ALTER TABLE `tbl_pinjam`
-  MODIFY `id_pinjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_pinjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `tbl_rak`
 --
 ALTER TABLE `tbl_rak`
-  MODIFY `id_rak` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_rak` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
