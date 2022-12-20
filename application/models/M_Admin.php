@@ -8,8 +8,22 @@ class M_Admin extends CI_Model
 	 //validasi jika user belum login
 	 }
 
-   function get_table($table_name)
+  function get_table($table_name)
    {
+     $get_user = $this->db->get($table_name);
+     return $get_user->result_array();
+   }
+
+  function get_table_p($table_name)
+   {
+     $this->db->where('level','Petugas');
+     $get_user = $this->db->get($table_name);
+     return $get_user->result_array();
+   }
+
+  function get_table_a($table_name)
+   {
+     $this->db->where('level','Anggota');
      $get_user = $this->db->get($table_name);
      return $get_user->result_array();
    }

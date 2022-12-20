@@ -16,8 +16,6 @@
 	        <div class="box box-primary">
                 <div class="box-header with-border">
 					<?php if($this->session->userdata('level') == 'Petugas'){?>
-                    <a href="data/bukutambah"><button class="btn btn-primary">
-						<i class="fa fa-plus"> </i> Tambah Buku</button></a>
 					<?php }?>
                 </div>
 				<!-- /.box-header -->
@@ -27,7 +25,7 @@
                     <table id="example1" class="table table-bordered table-striped table" width="100%">
                         <thead>
                             <tr>
-                                <th>No</th>
+                                <th>Rak</th>
                                 <th>Sampul</th>
                                 <th>ISBN</th>
                                 <th>Title</th>
@@ -42,7 +40,7 @@
                         <tbody>
                         <?php $no=1;foreach($buku->result_array() as $isi){?>
                             <tr>
-                                <td><?= $no;?></td>
+                                <td><?= $isi['id_rak'];?></td>
                                 <td>
                                     <center>
                                         <?php if(!empty($isi['sampul'] !== "0")){?>

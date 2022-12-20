@@ -17,11 +17,22 @@ class Data extends CI_Controller {
 	public function index()
 	{
 		$this->data['idbo'] = $this->session->userdata('ses_id');
-		$this->data['buku'] =  $this->db->query("SELECT * FROM tbl_buku ORDER BY id_buku DESC");
+		$this->data['buku'] =  $this->db->query("SELECT * FROM tbl_buku ORDER BY id_rak DESC");
         $this->data['title_web'] = 'Data Buku';
         $this->load->view('header_view',$this->data);
         $this->load->view('sidebar_view',$this->data);
         $this->load->view('buku/buku_view',$this->data);
+        $this->load->view('footer_view',$this->data);
+	}
+
+	public function rakbukuview()
+	{
+		$this->data['idbo'] = $this->session->userdata('ses_id');
+		$this->data['buku'] =  $this->db->query("SELECT * FROM tbl_buku ORDER BY id_rak DESC");
+        $this->data['title_web'] = 'Data Buku';
+        $this->load->view('header_view',$this->data);
+        $this->load->view('sidebar_view',$this->data);
+        $this->load->view('rak/rak_buku_view',$this->data);
         $this->load->view('footer_view',$this->data);
 	}
 

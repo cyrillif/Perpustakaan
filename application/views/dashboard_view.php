@@ -41,7 +41,7 @@
                     <div class="icon">
                       <i class="fa fa-users"></i>
                     </div>
-                    <a href="user" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="user/anggota" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                   </div>
                 </div>
 
@@ -71,7 +71,7 @@
                     <div class="icon">
                       <i class="fa fa-bars"></i>
                     </div>
-                    <a href="data" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="data/rakbukuview" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                   </div>
                 </div> 
 

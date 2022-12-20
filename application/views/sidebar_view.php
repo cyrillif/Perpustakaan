@@ -125,13 +125,19 @@
 				</li>
 				<li class="<?php if($this->uri->uri_string() == 'transaksi/kembali'){ echo 'active';}?>">
 					<a href="<?php echo base_url("transaksi/kembali");?>" class="cursor">
-						<i class="fa fa-upload"></i> <span>Data Pengambilan</span>
+						<i class="fa fa-upload"></i> <span>Data Pengembalian</span>
 					</a>
 				</li>
 				<li class="<?php if($this->uri->uri_string() == 'data'){ echo 'active';}?>
 				<?php if($this->uri->uri_string() == 'data/bukudetail/'.$this->uri->segment('3')){ echo 'active';}?>">
 					<a href="<?php echo base_url("data");?>" class="cursor">
 						<i class="fa fa-search"></i>  <span>Cari Buku</span>
+					</a>
+				</li>
+                <li class="<?php if($this->uri->uri_string() == 'data/rakbukuview'){ echo 'active';}?>
+				<?php if($this->uri->uri_string() == 'data/bukudetail/'.$this->uri->segment('3')){ echo 'active';}?>">
+					<a href="<?php echo base_url("data/rakbukuview");?>" class="cursor">
+						<i class="fa fa-search"></i>  <span>Cari Rak</span>
 					</a>
 				</li>
 				<li class="<?php if($this->uri->uri_string() == 'user/edit/'.$this->uri->segment('3')){ echo 'active';}?>">

@@ -17,8 +17,8 @@ class User extends CI_Controller {
     public function index()
     {	
         $this->data['idbo'] = $this->session->userdata('ses_id');
-        $this->data['user'] = $this->M_Admin->get_table('tbl_login');
-
+        $this->data['user'] = $this->M_Admin->get_table_p('tbl_login');
+		
         $this->data['title_web'] = 'Data User ';
         $this->load->view('header_view',$this->data);
         $this->load->view('sidebar_view',$this->data);
@@ -26,11 +26,11 @@ class User extends CI_Controller {
         $this->load->view('footer_view',$this->data);
     }
 
-    public function pustakawan()
+	public function anggota()
     {	
         $this->data['idbo'] = $this->session->userdata('ses_id');
-        $this->data['user'] = $this->M_Admin->get_table('tbl_login');
-
+        $this->data['user'] = $this->M_Admin->get_table_a('tbl_login');
+		
         $this->data['title_web'] = 'Data User ';
         $this->load->view('header_view',$this->data);
         $this->load->view('sidebar_view',$this->data);
